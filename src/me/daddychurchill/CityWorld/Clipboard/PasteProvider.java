@@ -2,7 +2,6 @@ package me.daddychurchill.CityWorld.Clipboard;
 
 import me.daddychurchill.CityWorld.CityWorldGenerator;
 import me.daddychurchill.CityWorld.Plugins.Provider;
-import me.daddychurchill.CityWorld.Plugins.WorldEdit.PasteProvider_WorldEdit;
 
 public abstract class PasteProvider extends Provider {
 
@@ -46,9 +45,6 @@ public abstract class PasteProvider extends Provider {
 	public static PasteProvider loadProvider(CityWorldGenerator generator) {
 
 		PasteProvider provider = null;
-
-		// try worldedit...
-		provider = PasteProvider_WorldEdit.loadWorldEdit(generator);
 
 		// default to stock PasteProvider
 		if (provider == null) {
