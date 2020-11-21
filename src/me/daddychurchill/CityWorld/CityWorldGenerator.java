@@ -77,35 +77,19 @@ public class CityWorldGenerator extends ChunkGenerator implements CityWorldLog {
 		NATURE, // just nature, no constructs anywhere
 		METRO, // just buildings, no nature
 		SPARSE, // a world of cities but away from each other
-		// PILLARS // floating with pillars holding everything up
-		// LAVADUNES // volcanos everywhere
-		// GLACERS // glacers everywhere
-		// MOON, // lunar landscape with lunar bases
-		// UNDERWATER, // traditional terrain with raised sea level with under water
-		// cities
-		// WESTERN, // desert landscape with sparse western styled towns and ranches
-		// UNDERGROUND, // elevated terrain with underground cities
-		// MINING, // elevated terrain with very shallow mines and very small towns
+		PILLARS, // floating with pillars holding everything up
+		LAVADUNES, // volcanos everywhere
+		GLACERS, // glacers everywhere
+		MOON, // lunar landscape with lunar bases
+		UNDERWATER, // traditional terrain with raised sea level with under water cities
+		WESTERN, // desert landscape with sparse western styled towns and ranches
+		UNDERGROUND, // elevated terrain with underground cities
+		MINING, // elevated terrain with very shallow mines and very small towns
 		DESTROYED, // normal landscape with destroyed cities
 		NORMAL
 	} // traditional terrain and cities
 
 	public static WorldStyle validateStyle(WorldStyle style) {
-		switch (style) {
-		case FLOATING:
-//		case FLOODED:
-//		case SANDDUNES:
-//		case SNOWDUNES:
-//		case ASTRAL:
-//		case MAZE:
-//		case NATURE:
-//		case METRO:
-//		case SPARSE:
-			CityWorld.log.info(
-					"[Generator] " + style + " worlds unavailable due to performance issues, switching to NORMAL");
-			return WorldStyle.NORMAL;
-		default:
-		}
 		return style;
 	}
 
@@ -160,7 +144,7 @@ public class CityWorldGenerator extends ChunkGenerator implements CityWorldLog {
 			reportMessage("**********************************************************");
 			reportMessage("** WARNING, RUNNING ON AN STRANGE VERSION OF MINECRAFT  **");
 			reportMessage("**********************************************************");
-//			reportException("Needs " + String.format("%.3f", minVersion) + " or better, found " + 
+//			reportException("Needs " + String.format("%.3f", minVersion) + " or better, found " +
 //					String.format("%.3f", minecraftVersion) +
 //					", parsed from " + minecraftVersionRaw, new Exception(getPluginName()));
 			reportMessage("Needs " + String.format("%.3f", minVersion) + " or better, found "
@@ -271,13 +255,13 @@ public class CityWorldGenerator extends ChunkGenerator implements CityWorldLog {
 			evergreenRange = snowLevel - evergreenLevel;
 
 //				// seabed = 35 deepsea = 50 sea = 64 sidewalk = 65 tree = 110 evergreen = 156 snow = 202 top = 249
-//				CityWorld.reportMessage("seabed = " + (seaLevel - seaRange) + 
-//								        " deepsea = " + deepseaLevel + 
-//								        " sea = " + seaLevel + 
-//								        " sidewalk = " + sidewalkLevel + 
-//								        " tree = " + treeLevel + 
-//								        " evergreen = " + evergreenLevel + 
-//								        " snow = " + snowLevel + 
+//				CityWorld.reportMessage("seabed = " + (seaLevel - seaRange) +
+//								        " deepsea = " + deepseaLevel +
+//								        " sea = " + seaLevel +
+//								        " sidewalk = " + sidewalkLevel +
+//								        " tree = " + treeLevel +
+//								        " evergreen = " + evergreenLevel +
+//								        " snow = " + snowLevel +
 //								        " top = " + (seaLevel + landRange));
 
 			// get the connectionKeys
@@ -327,25 +311,25 @@ public class CityWorldGenerator extends ChunkGenerator implements CityWorldLog {
 
 //	@Override
 //	public Location getFixedSpawnLocation(World world, Random random) {
-//		
+//
 ////		// guess a location
 ////		int spawnX = random.nextInt(spawnRadius * 2) - spawnRadius;
 ////		int spawnZ = random.nextInt(spawnRadius * 2) - spawnRadius;
-////		
+////
 ////		// find a general height
 ////		int spawnY = getFarBlockY(spawnX, spawnZ);
 ////		int maxY = world.getMaxHeight();
-////		
+////
 ////		// find the first empty block
 ////		while (spawnY < maxY) {
-////			if (world.getBlockAt(spawnX, spawnY, spawnZ).isEmpty() && 
+////			if (world.getBlockAt(spawnX, spawnY, spawnZ).isEmpty() &&
 ////				world.getBlockAt(spawnX, spawnY + 1, spawnZ).isEmpty())
 ////				return new Location(world, spawnX, spawnY, spawnZ);
-////			
+////
 ////			// little higher up then
 ////			spawnY++;
 ////		}
-////		
+////
 ////		// still nothing?
 ////		return new Location(world, spawnX, spawnY, spawnZ);
 //		CityWorld.log.info("******* getFixedSpawnLocation = 0, 250, 0");
