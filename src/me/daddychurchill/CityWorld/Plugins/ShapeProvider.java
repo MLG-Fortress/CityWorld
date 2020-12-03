@@ -210,6 +210,7 @@ public abstract class ShapeProvider extends Provider {
 		case DESTROYED:
 		case SPARSE:
 		case NORMAL:
+		default:
 			provider = new ShapeProvider_Normal(generator, odds);
 			break;
 		}
