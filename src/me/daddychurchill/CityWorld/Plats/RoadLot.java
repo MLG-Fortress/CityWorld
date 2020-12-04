@@ -866,13 +866,13 @@ public class RoadLot extends ConnectedLot {
 				}
 
 //				int offset = inACity ? 2 : 1;
-//				
+//
 //				// wall to the east/west
 //				if (roads.toWest() && roads.toEast()) {
-//					
+//
 //					// carve out the tunnel
 //					chunk.airoutBlocks(generator, 0, 16, pavementLevel + offset, pavementLevel + tunnelHeight + 2, 0, 16);
-//					
+//
 //					// walls please, this will find the Y the hard way since we are looking at the next chunk over
 //					for (int x = 0; x < chunk.width; x++) {
 //						placeRetainingWall(chunk, x, 0, pavementLevel + 1, generator.getFarBlockY(originX + x, originZ - 1));
@@ -1411,14 +1411,14 @@ public class RoadLot extends ConnectedLot {
 		else if (dirtroadIsClay)
 			chunk.setBlocks(x1, x2, y, z1, z2, dirtroadClay);
 		else {
-//				pepperPlants(generator, chunk, x1, x2, y, z1, z2, Odds.oddsLikely, 
+//				pepperPlants(generator, chunk, x1, x2, y, z1, z2, Odds.oddsLikely,
 //						doingFolage ? Material.BONE_BLOCK : Material.DIAMOND_BLOCK, doingTunnel);
 			pepperPlants(generator, chunk, x1, x2, y, z1, z2, Odds.oddsVeryLikely, dirtroadMat, doingFolage,
 					doingTunnel);
 		}
-//		
-//		
-//			else if (doingFolage) 
+//
+//
+//			else if (doingFolage)
 ////				pepperPlants(generator, chunk, x1, x2, y, z1, z2, Odds.oddsSomewhatLikely, dirtroadMat, doingTunnel);
 //				pepperPlants(generator, chunk, x1, x2, y, z1, z2, Odds.oddsSomewhatLikely, Material.BONE_BLOCK, doingTunnel);
 //			else
@@ -1527,6 +1527,7 @@ public class RoadLot extends ConnectedLot {
 	protected void decaySidewalk(CityWorldGenerator generator, RealBlocks chunk, int x1, int x2, int y, int z1,
 			int z2) {
 		int amount = (x2 - x1) * (z2 - z1) / 10;
+		System.out.println("amount: " + amount);
 		while (amount > 0) {
 			int x = x1 + chunkOdds.getRandomInt(x2 - x1);
 			int z = z1 + chunkOdds.getRandomInt(z2 - z1);
