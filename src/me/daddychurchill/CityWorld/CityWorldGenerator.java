@@ -77,14 +77,14 @@ public class CityWorldGenerator extends ChunkGenerator implements CityWorldLog {
 		NATURE, // just nature, no constructs anywhere
 		METRO, // just buildings, no nature
 		SPARSE, // a world of cities but away from each other
-		PILLARS, // floating with pillars holding everything up
-		LAVADUNES, // volcanos everywhere
-		GLACERS, // glacers everywhere
-		MOON, // lunar landscape with lunar bases
-		UNDERWATER, // traditional terrain with raised sea level with under water cities
-		WESTERN, // desert landscape with sparse western styled towns and ranches
-		UNDERGROUND, // elevated terrain with underground cities
-		MINING, // elevated terrain with very shallow mines and very small towns
+		// PILLARS, // floating with pillars holding everything up
+		// LAVADUNES, // volcanos everywhere
+		// GLACERS, // glacers everywhere
+		// MOON, // lunar landscape with lunar bases
+		// UNDERWATER, // traditional terrain with raised sea level with under water cities
+		// WESTERN, // desert landscape with sparse western styled towns and ranches
+		// UNDERGROUND, // elevated terrain with underground cities
+		// MINING, // elevated terrain with very shallow mines and very small towns
 		DESTROYED, // normal landscape with destroyed cities
 		NORMAL
 	} // traditional terrain and cities
