@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
 public abstract class Surroundings {
 
@@ -11,7 +11,7 @@ public abstract class Surroundings {
 	public abstract boolean toSouthEast();
 	public abstract boolean toNorthWest();
 	public abstract boolean toSouthWest();
-	
+
 	public int getNeighborCount() {
 		int result = 0;
 		if (toWest())

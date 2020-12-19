@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support.Materials;
+package me.daddychurchill.CityWorld_00face.Support.Materials;
 
 import java.util.Map;
 
@@ -7,30 +7,30 @@ import org.bukkit.material.MaterialData;
 import com.google.common.collect.Maps;
 
 public class Sponge extends MaterialData {
-	
+
 	public Sponge() {
 		super(Material.SPONGE);
 	}
-	
+
 	public Sponge(SpongeType type) {
 		this();
 		setType(type);
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public SpongeType getType() {
 		return SpongeType.getByData(getData());
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public void setType(SpongeType type) {
 		setData(type.getData());
 	}
-	
+
 	public Sponge clone() {
 		return (Sponge)super.clone();
 	}
-	
+
 	public String toString() {
 		return super.toString() + "." + getType();
 	}
@@ -38,14 +38,14 @@ public class Sponge extends MaterialData {
 	public enum SpongeType {
 		DRY(0),
 		WET(1);
-		
+
 		private final byte data;
 		private static final Map<Byte, SpongeType> BY_DATA;
-		
+
 		private SpongeType(int data) {
 			this.data = ((byte)data);
 		}
-	
+
 		@Deprecated
 		public byte getData()
 		{

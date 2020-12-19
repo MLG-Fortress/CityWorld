@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support.Materials;
+package me.daddychurchill.CityWorld_00face.Support.Materials;
 
 import java.util.Map;
 
@@ -7,30 +7,30 @@ import org.bukkit.material.MaterialData;
 import com.google.common.collect.Maps;
 
 public class Sand extends MaterialData {
-	
+
 	public Sand() {
 		super(Material.SAND);
 	}
-	
+
 	public Sand(SandType type) {
 		this();
 		setType(type);
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public SandType getType() {
 		return SandType.getByData(getData());
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	protected void setType(SandType type) {
 		setData(type.getData());
 	}
-	
+
 	public Sand clone() {
 		return (Sand)super.clone();
 	}
-	
+
 	public String toString() {
 		return super.toString() + "." + getType();
 	}
@@ -38,14 +38,14 @@ public class Sand extends MaterialData {
 	public enum SandType {
 		SAND(0),
 		RED(1);
-		
+
 		private final byte data;
 		private static final Map<Byte, SandType> BY_DATA;
-		
+
 		private SandType(int data) {
 			this.data = ((byte)data);
 		}
-	
+
 		@Deprecated
 		public byte getData()
 		{

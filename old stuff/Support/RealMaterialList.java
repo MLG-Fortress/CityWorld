@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +7,13 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
 
-import me.daddychurchill.CityWorld.CityWorldGenerator;
+import me.daddychurchill.CityWorld_00face.CityWorldGenerator;
 
 public class RealMaterialList {
 
 	public String listName;
 	private List<ItemStack> items;
-	
+
 	public RealMaterialList(String name) {
 		super();
 		listName = name;
@@ -31,34 +31,34 @@ public class RealMaterialList {
 		else if (clear)
 			items.clear();
 	}
-	
+
 	public void add(Material ... materials) {
 		init(false);
 		for (Material material : materials) {
 			items.add(new ItemStack(material));
 		}
 	}
-	
+
 	public void add(Material material) {
 		init(false);
 		items.add(new ItemStack(material));
 	}
-	
+
 	public void remove(Material material) {
 		if (items != null)
 			for (int i = items.size() - 1; i >= 0; i--)
 				if (items.get(i).getType() == material)
 					items.remove(i);
 	}
-	
+
 	public int count() {
 		return items == null ? 0 : items.size();
 	}
-	
+
 	public Material getRandomMaterial(Odds odds) {
 		return getRandomMaterial(odds, Material.AIR);
 	}
-	
+
 	public Material getRandomMaterial(Odds odds, Material defaultMaterial) {
 		if (items == null || count() == 0)
 			return defaultMaterial;
@@ -82,7 +82,7 @@ public class RealMaterialList {
 		}
 		section.set(listName, names);
 	}
-	
+
 	public void read(CityWorldGenerator generator, ConfigurationSection section) {
 		if (section.isList(listName)) {
 			init(true);
@@ -99,7 +99,7 @@ public class RealMaterialList {
 					generator.reportException("Reading " + generator.worldName + ".Materials." + listName + ": " + name, e);
 					material = null;
 				}
-				
+
 				if (material != null)
 					add(material);
 			}

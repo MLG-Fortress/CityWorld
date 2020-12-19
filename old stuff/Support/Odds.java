@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
 import java.util.Random;
 
@@ -32,12 +32,12 @@ public class Odds {
 	public final static double oddsEffinUnlikely =				 1.0 / 233.00; //   0.43%
 	public final static double oddsNearlyNeverGoingToHappen =	 1.0 / 377.00; //   0.27%
 	public final static double oddsNeverGoingToHappen =			 0.0;          //   0.00%
-	
+
 	public final static double oddsThricedSomewhatUnlikely = 	oddsSomewhatUnlikely * 3; // 60.0%
 	public final static double oddsHalvedPrettyLikely = 		oddsPrettyLikely / 2;     // 40.0%
-	
+
 	public enum ColorSet {ALL, GREEN, WHITE, TAN, PINK, NETHER, THEEND, DARK, LIGHT};
-	
+
 	public Odds() {
 		super();
 		random = new Random();
@@ -47,93 +47,93 @@ public class Odds {
 		super();
 		random = new Random(seed);
 	}
-	
+
 	private Random random;
-	
+
 	public boolean playOdds(double chances) {
 		return random.nextDouble() < chances;
 	}
-	
+
 	public boolean flipCoin() {
 		return random.nextBoolean();
 	}
-	
+
 	public int rollDice() {
 		return random.nextInt(6);
 	}
-	
+
 	public boolean rollDice(int want) {
 		return rollDice() == want;
 	}
-	
+
 	public double getRandomDouble() {
 		return random.nextDouble();
 	}
-	
+
 	public int getRandomInt() {
 		return random.nextInt();
 	}
-	
+
 	public int getRandomInt(int range) {
 		return random.nextInt(range);
 	}
-	
+
 	public int getRandomInt(int min, int range) {
 		return min + random.nextInt(range);
 	}
-	
+
 	public int calcRandomRange(int min, int max) {
 		return min + random.nextInt(max - min + 1);
 	}
-	
+
 	public double calcRandomRange(double min, double max) {
 		return min + random.nextDouble() * (max - min + 1);
 	}
-	
+
 	public int getShimmy() {
 		return getShimmy(1);
 	}
-	
+
 	public int getShimmy(int max) {
 		return -max + random.nextInt(max * 2 + 1);
 	}
-	
+
 	public Material getRandomMaterial(Material ... items) {
 		return items[getRandomInt(items.length)];
 	}
-	
+
 	private DyeColor getRandomColor(DyeColor... colors) {
 		return colors[getRandomInt(colors.length)];
 	}
-	
+
 	public ColorSet getRandomColorSet() {
 		ColorSet[] values = ColorSet.values();
 		return values[getRandomInt(values.length)];
 	}
-	
+
 	public DyeColor getRandomColor() {
 		return getRandomColor(ColorSet.ALL);
 	}
-	
+
 	public DyeColor getRandomLightColor() {
 		return getRandomColor(ColorSet.LIGHT);
 	}
-	
+
 	public DyeColor getRandomDarkColor() {
 		return getRandomColor(ColorSet.DARK);
 	}
-	
+
 	public DyeColor getRandomCamoColor() {
 		return getRandomColor(ColorSet.GREEN);
 	}
-	
+
 	public DyeColor getRandomColor(ColorSet set) {
 		switch (set) {
 		case ALL:
 		default:
 			return getRandomColor(
 					DyeColor.WHITE, DyeColor.ORANGE, DyeColor.MAGENTA, DyeColor.LIGHT_BLUE,
-					DyeColor.YELLOW, DyeColor.LIME, DyeColor.PINK, DyeColor.GRAY, 
+					DyeColor.YELLOW, DyeColor.LIME, DyeColor.PINK, DyeColor.GRAY,
 					DyeColor.LIGHT_GRAY, DyeColor.CYAN, DyeColor.PURPLE, DyeColor.BLUE,
 					DyeColor.BROWN, DyeColor.GREEN, DyeColor.RED, DyeColor.BLACK);
 		case GREEN:
@@ -164,20 +164,20 @@ public class Odds {
 					DyeColor.WHITE, DyeColor.LIGHT_GRAY, DyeColor.PINK);
 		}
 	}
-	
+
 	public int getCauldronLevel() {
 		return getRandomInt(BlackMagic.maxCauldronLevel + 1);
 	}
-	
+
 	public int getRandomWoodType() {
 		return getRandomInt(4);
 	}
-	
+
 	public TreeSpecies getRandomWoodSpecies() {
 		TreeSpecies[] values = TreeSpecies.values();
 		return values[getRandomInt(values.length)];
 	}
-	
+
 	public Material getRandomWoodenDoorType() {
 		switch (getRandomInt(6)) {
 		case 1:
@@ -195,15 +195,15 @@ public class Odds {
 			return Material.OAK_DOOR;
 		}
 	}
-	
+
 	public int getRandomNetherWartGrowth() {
 		return getRandomInt(4);
 	}
-	
+
 	public long getRandomLong() {
 		return random.nextLong();
 	}
-	
+
 	public BlockFace getRandomFacing() {
 		switch (random.nextInt(4)) {
 		case 0:

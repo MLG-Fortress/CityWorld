@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
 import org.bukkit.entity.EntityType;
 
@@ -34,11 +34,11 @@ public class AnimalList extends EntityList {
 			return 6;
 		}
 	}
-	
+
 	public enum EntityAffilation {HOSTILE, NEUTRAL, FRIENDLY, OTHER};
 	public EntityAffilation getEntityAffilation(EntityType foo) {
 		switch (foo) {
-		
+
 		// bad
 		case BLAZE:
 		case CAVE_SPIDER:
@@ -73,7 +73,7 @@ public class AnimalList extends EntityList {
 		case PHANTOM:
 		case TRIDENT:
 			return EntityAffilation.HOSTILE;
-			
+
 		// neutral
 		case BAT:
 		case IRON_GOLEM:
@@ -101,7 +101,7 @@ public class AnimalList extends EntityList {
 		case PIG:
 		case SHEEP:
 			return EntityAffilation.NEUTRAL;
-			
+
 		// friendly
 		case VILLAGER:
 			return EntityAffilation.FRIENDLY;
@@ -153,7 +153,7 @@ public class AnimalList extends EntityList {
 		default:
 			break;
 		}
-		
+
 		return EntityAffilation.OTHER;
 	}
 }

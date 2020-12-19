@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support.Materials;
+package me.daddychurchill.CityWorld_00face.Support.Materials;
 
 import java.util.Map;
 
@@ -9,11 +9,11 @@ import org.bukkit.Material.STONE_SLAB;
 import com.google.common.collect.Maps;
 
 public class Slab extends Step {
-	
+
 	public Slab(SlabType type) {
 		super(type.getMaterial());
 	}
-	
+
 	public enum SlabType {
 		STONE(0),
 		SANDSTONE(1),
@@ -23,14 +23,14 @@ public class Slab extends Step {
 		SMOOTH_BRICK(5),
 		NETHER_BRICK(6),
 		QUARTZ(7);
-		
+
 		private final byte data;
 		private static final Map<Byte, SlabType> BY_DATA;
-		
+
 		private SlabType(int data) {
 			this.data = ((byte)data);
 		}
-		
+
 		protected Material getMaterial() {
 			switch (BY_DATA.get(this.data)) {
 			default:
@@ -52,7 +52,7 @@ public class Slab extends Step {
 				return Material.QUARTZ;
 			}
 		}
-		
+
 		public static SlabType getSlabType(MaterialData material) {
 			switch (material.getItemType()) {
 			default:
@@ -74,7 +74,7 @@ public class Slab extends Step {
 				return SlabType.QUARTZ;
 			}
 		}
-	
+
 		@Deprecated
 		public byte getData()
 		{

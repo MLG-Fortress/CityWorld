@@ -1,16 +1,16 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
-import me.daddychurchill.CityWorld.CityWorldGenerator;
+import me.daddychurchill.CityWorld_00face.CityWorldGenerator;
 
 import org.bukkit.Material;
 import org.bukkit.generator.ChunkGenerator.ChunkData;
 
 public final class InitialBlocks extends AbstractBlocks {
 	public ChunkData chunkData;
-	
+
 	public InitialBlocks(CityWorldGenerator aGenerator, ChunkData chunk, int sectionX, int sectionZ) {
 		super(aGenerator);
-		
+
 		this.sectionX = sectionX;
 		this.sectionZ = sectionZ;
 		this.chunkData = chunk;
@@ -19,7 +19,7 @@ public final class InitialBlocks extends AbstractBlocks {
 	public boolean isType(int x, int y, int z, Material material) {
 		return chunkData.getType(x, y, z).equals(material);
 	}
-	
+
 	public boolean isType(int x, int y, int z, Material ... materials) {
 		Material block = chunkData.getType(x, y, z);
 		for (Material material : materials)
@@ -27,16 +27,16 @@ public final class InitialBlocks extends AbstractBlocks {
 				return true;
 		return false;
 	}
-	
+
 	@Override
 	public boolean isEmpty(int x, int y, int z) {
 		return chunkData.getType(x, y, z).equals(Material.AIR);
 	}
-	
+
 	public Material getBlock(int x, int y, int z) {
 		return chunkData.getType(x, y, z);
 	}
-	
+
 	@Override
 	public void setBlock(int x, int y, int z, Material material) {
 		chunkData.setBlock(x, y, z, material);
@@ -46,7 +46,7 @@ public final class InitialBlocks extends AbstractBlocks {
 		if (isEmpty(x, y, z) && !isEmpty(x, y - 1, z))
 			chunkData.setBlock(x, y, z, material);
 	}
-	
+
 	@Override
 	public void clearBlock(int x, int y, int z) {
 		chunkData.setBlock(x, y, z, Material.AIR);
@@ -58,7 +58,7 @@ public final class InitialBlocks extends AbstractBlocks {
 		for (int y = y1; y < y2; y++)
 			setBlock(x, y, z, material);
 	}
-	
+
 	//================ x1, x2, y1, y2, z1, z2
 	@Override
 	public void setBlocks(int x1, int x2, int y1, int y2, int z1, int z2, Material material) {
@@ -88,7 +88,7 @@ public final class InitialBlocks extends AbstractBlocks {
 		setBlocks(x1, x1 + 1, y1, y2, z1 + 1, z2 - 1, material);
 		setBlocks(x2 - 1, x2, y1, y2, z1 + 1, z2 - 1, material);
 	}
-	
+
 	//================ Layers
 	@Override
 	public int setLayer(int blocky, Material material) {
@@ -107,7 +107,7 @@ public final class InitialBlocks extends AbstractBlocks {
 		setBlocks(inset, width - inset, blocky, blocky + height, inset, width - inset, material);
 		return blocky + height;
 	}
-	
+
 	@Override
 	public final boolean setEmptyBlock(int x, int y, int z, Material material) {
 		if (isEmpty(x, y, z)) {
@@ -126,5 +126,5 @@ public final class InitialBlocks extends AbstractBlocks {
 			}
 		}
 	}
-	
+
 }

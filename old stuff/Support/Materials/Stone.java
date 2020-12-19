@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support.Materials;
+package me.daddychurchill.CityWorld_00face.Support.Materials;
 
 import java.util.Map;
 
@@ -7,30 +7,30 @@ import org.bukkit.material.MaterialData;
 import com.google.common.collect.Maps;
 
 public class Stone extends MaterialData {
-	
+
 	public Stone() {
 		super(Material.STONE);
 	}
-	
+
 	public Stone(StoneType type) {
 		this();
 		setType(type);
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public StoneType getType() {
 		return StoneType.getByData(getData());
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public void setType(StoneType type) {
 		setData(type.getData());
 	}
-	
+
 	public Stone clone() {
 		return (Stone)super.clone();
 	}
-	
+
 	public String toString() {
 		return super.toString() + "." + getType();
 	}
@@ -40,14 +40,14 @@ public class Stone extends MaterialData {
 		GRANITE(1), POLISHED_GRANITE(2),
 		DIORITE(3), POLISHED_DIORITE(4),
 		ANDESITE(5), POLISHED_ANDESITE(6);
-		
+
 		private final byte data;
 		private static final Map<Byte, StoneType> BY_DATA;
-		
+
 		private StoneType(int data) {
 			this.data = ((byte)data);
 		}
-	
+
 		@Deprecated
 		public byte getData()
 		{

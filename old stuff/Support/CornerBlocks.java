@@ -1,13 +1,13 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
 import java.util.ArrayList;
 
 import org.bukkit.Material;
 
 public class CornerBlocks {
-	
+
 	public final static int CornerWidth = 7;
-	
+
 	// ideally these would be an ENUM but I haven't figured a way to do that without introducing icky looking mini-schematics
 	private final static byte non = 0;
 	private final static byte opt = 1;
@@ -23,38 +23,38 @@ public class CornerBlocks {
 	private final static byte Wgg = 11;
 	private final static byte ggg = 12;
 	private final static byte ggW = 13;
-	
+
 	// these won't show up on the roof
 	private final static byte BRR = 20; // balcony floor block, single iron railing, and nothing above it
 	private final static byte Brr = 21; // balcony floor block, single wood fence, and nothing above it
 	private final static byte Bgg = 22; // balcony floor block, single thin glass pane, and nothing above it
 	private final static byte BDD = 23; // balcony floor block, door (these are just an empty hole right now), and wall blocks above it
 	private final static byte BNN = 24; // balcony floor block, and nothing but air above it
-	private final static byte BWW = 25; // balcony floor block, and wall blocks above it (WWW) 
+	private final static byte BWW = 25; // balcony floor block, and wall blocks above it (WWW)
 	private final static byte BGG = 26; // balcony floor block, and glass above it (WGG)
-	private final static byte BGW = 27; // balcony floor block, glass and wall blocks above it (WGW) 
+	private final static byte BGW = 27; // balcony floor block, glass and wall blocks above it (WGW)
 
 	private final static byte Wnn = 40; // single wall block, and nothing but air above it
 	private final static byte nWn = 41; // nothing but air, bunch of glass blocks, topped with nothing but air
 	private final static byte nnW = 42; // nothing but air, topped with a single wall block
-	
+
 	public boolean isOldRoundedCorner(int i) {
 		return i == 0; // should always be the first one
 	}
-	
+
 	public int pickCornerStyle(Odds odds) {
 		return odds.getRandomInt(corners.size());
 	}
-	
+
 	private Corner getCorner(int i) {
 		return corners.get(i % corners.size()); // insure that the index is within the range of defined corners
 	}
-	
+
 	public CornerBlocks() {
 		corners = new ArrayList<Corner>();
-		
+
 		corners.add(new RoundedCorner()); // always put this in first
-		
+
 //		corners.add(new CustomCorner(new byte[][] {
 //		}));
 
@@ -537,7 +537,7 @@ public class CornerBlocks {
 			{WWW, BNN, BNN, BNN, BNN, BNN, Brr},
 			{WWW, Brr, Brr, Brr, Brr, Brr, BWW},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, WWW, WWW, WWW},
 			{FLR, FLR, FLR, FLR, BGW, BNN, Brr},
@@ -547,7 +547,7 @@ public class CornerBlocks {
 			{WWW, BNN, BNN, BNN, BNN, BWW, BWW},
 			{WWW, Brr, Brr, Brr, Brr, BWW, non},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, WWW, WWW, WWW},
 			{FLR, FLR, FLR, FLR, BGW, BNN, Brr},
@@ -557,7 +557,7 @@ public class CornerBlocks {
 			{WWW, BNN, BNN, BNN, BNN, BWW, opt},
 			{WWW, Brr, Brr, Brr, WWW, opt, non},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, WGG},
@@ -567,7 +567,7 @@ public class CornerBlocks {
 			{FLR, FLR, BDD, BNN, BNN, BNN, Brr},
 			{WWW, WGG, WWW, Brr, Brr, Brr, Brr},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, WWW, WWW},
 			{FLR, FLR, FLR, FLR, FLR, WGG, non},
@@ -577,7 +577,7 @@ public class CornerBlocks {
 			{WWW, WGG, WWW, BNN, BNN, BNN, Brr},
 			{WWW, non, WWW, Brr, Brr, Brr, Brr},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, WGG},
@@ -597,7 +597,7 @@ public class CornerBlocks {
 			{FLR, FLR, BDD, BNN, BNN, BNN, Brr},
 			{WWW, Wgg, WWW, Brr, Brr, Brr, Brr},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, WWW, WWW},
 			{FLR, FLR, FLR, FLR, FLR, Wgg, non},
@@ -607,7 +607,7 @@ public class CornerBlocks {
 			{WWW, Wgg, WWW, BNN, BNN, BNN, Brr},
 			{WWW, non, WWW, Brr, Brr, Brr, Brr},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, Wgg},
@@ -618,7 +618,7 @@ public class CornerBlocks {
 			{WWW, Wgg, WWW, Brr, Brr, Brr, WWW},
 		}));
 
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, WWW, WWW, WWW},
 			{FLR, FLR, FLR, FLR, WGW, BNN, Bgg},
@@ -628,7 +628,7 @@ public class CornerBlocks {
 			{WWW, BNN, BNN, BNN, BNN, BNN, Bgg},
 			{WWW, Bgg, Bgg, Bgg, Bgg, Bgg, BWW},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, WWW, WWW, WWW},
 			{FLR, FLR, FLR, FLR, BGW, BNN, Bgg},
@@ -638,7 +638,7 @@ public class CornerBlocks {
 			{WWW, BNN, BNN, BNN, BNN, BWW, BWW},
 			{WWW, Bgg, Bgg, Bgg, Bgg, BWW, non},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, WWW, WWW, WWW},
 			{FLR, FLR, FLR, FLR, BGW, BNN, Bgg},
@@ -648,7 +648,7 @@ public class CornerBlocks {
 			{WWW, BNN, BNN, BNN, BNN, BWW, opt},
 			{WWW, Bgg, Bgg, Bgg, WWW, opt, non},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, WGG},
@@ -658,7 +658,7 @@ public class CornerBlocks {
 			{FLR, FLR, BDD, BNN, BNN, BNN, Bgg},
 			{WWW, WGG, WWW, Bgg, Bgg, Bgg, Bgg},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, WWW, WWW},
 			{FLR, FLR, FLR, FLR, FLR, WGG, non},
@@ -668,7 +668,7 @@ public class CornerBlocks {
 			{WWW, WGG, WWW, BNN, BNN, BNN, Bgg},
 			{WWW, non, WWW, Bgg, Bgg, Bgg, Bgg},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, WGG},
@@ -678,7 +678,7 @@ public class CornerBlocks {
 			{FLR, FLR, BDD, BNN, BNN, BNN, Bgg},
 			{WWW, WGG, WWW, Bgg, Bgg, Bgg, WWW},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, Wgg},
@@ -688,7 +688,7 @@ public class CornerBlocks {
 			{FLR, FLR, BDD, BNN, BNN, BNN, Bgg},
 			{WWW, Wgg, WWW, Bgg, Bgg, Bgg, Bgg},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, WWW, WWW},
 			{FLR, FLR, FLR, FLR, FLR, Wgg, non},
@@ -698,7 +698,7 @@ public class CornerBlocks {
 			{WWW, Wgg, WWW, BNN, BNN, BNN, Bgg},
 			{WWW, non, WWW, Bgg, Bgg, Bgg, Bgg},
 		}));
-		
+
 		corners.add(new CustomCorner(new byte[][] {
 			{FLR, FLR, FLR, FLR, FLR, FLR, WWW},
 			{FLR, FLR, FLR, FLR, FLR, FLR, Wgg},
@@ -708,54 +708,54 @@ public class CornerBlocks {
 			{FLR, FLR, BDD, BNN, BNN, BNN, Bgg},
 			{WWW, Wgg, WWW, Bgg, Bgg, Bgg, WWW},
 		}));
-		
+
 //		corners.add(new CustomCorner(new byte[][] {
 //		}));
 //
 	}
-	
+
 	public void drawNWVerticals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawNWVerticals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawNEVerticals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawNEVerticals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawSWVerticals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawSWVerticals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawSEVerticals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawSEVerticals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawNWHorizontals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawNWHorizontals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawNEHorizontals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawNEHorizontals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawSWHorizontals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawSWHorizontals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	public void drawSEHorizontals(int i, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 			Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 		getCorner(i).drawSEHorizontals(blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 	}
-	
+
 	private ArrayList<Corner> corners;
-	
+
 	private abstract class Corner {
 		public abstract void drawNWVerticals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof);
@@ -765,7 +765,7 @@ public class CornerBlocks {
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof);
 		public abstract void drawSEVerticals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof);
-		
+
 		public abstract void drawNWHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof);
 		public abstract void drawNEHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
@@ -775,10 +775,10 @@ public class CornerBlocks {
 		public abstract void drawSEHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof);
 	}
-	
+
 	private class RoundedCorner extends Corner {
 		private RoundedCorner() {
-			
+
 		}
 
 		@Override
@@ -821,7 +821,7 @@ public class CornerBlocks {
 				Material secondary, boolean outsetEffect, boolean onRoof) {
 		}
 	}
-	
+
 	public class CustomCorner extends Corner {
 		private CustomCorner(byte[][] source) {
 			NW = source;
@@ -829,7 +829,7 @@ public class CornerBlocks {
 			SE = flipNS(NE);
 			SW = flipNS(NW);
 		}
-		
+
 		private byte[][] NW;
 		private byte[][] NE;
 		private byte[][] SW;
@@ -860,50 +860,50 @@ public class CornerBlocks {
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setVerticals(NW, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawNEVerticals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setVerticals(NE, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawSWVerticals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setVerticals(SW, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawSEVerticals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setVerticals(SE, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawNWHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setHorizontals(NW, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawNEHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setHorizontals(NE, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawSWHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setHorizontals(SW, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
+
 		@Override
 		public void drawSEHorizontals(AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			setHorizontals(SE, blocks, xInset, y1, y2, zInset, primary, secondary, outsetEffect, onRoof);
 		}
-		
-		private void setVerticals(byte[][] source, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset, 
+
+		private void setVerticals(byte[][] source, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			for (int x = 0; x < CornerBlocks.CornerWidth; x++) {
 				for (int z = 0; z < CornerBlocks.CornerWidth; z++) {
@@ -951,7 +951,7 @@ public class CornerBlocks {
 						blocks.setBlocks(xInset + x, y1 + 1, y2 - 1, zInset + z, primary);
 						blocks.setBlock(xInset + x, y2 - 1, zInset + z, secondary);
 						break;
-						
+
 					case BWW:
 						if (!onRoof) {
 							blocks.setBlocks(xInset + x, y1, y2, zInset + z, primary);
@@ -1007,7 +1007,7 @@ public class CornerBlocks {
 					case nnW:
 						blocks.setBlock(xInset + x, y2 - 1, zInset + z, primary);
 						break;
-						
+
 					case opt:
 						if (outsetEffect)
 							blocks.setBlocks(xInset + x, y1, y2, zInset + z, primary);
@@ -1021,8 +1021,8 @@ public class CornerBlocks {
 				}
 			}
 		}
-		
-		private void setHorizontals(byte[][] source, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset, 
+
+		private void setHorizontals(byte[][] source, AbstractBlocks blocks, int xInset, int y1, int y2, int zInset,
 				Material primary, Material secondary, boolean outsetEffect, boolean onRoof) {
 			for (int x = 0; x < CornerBlocks.CornerWidth; x++) {
 				for (int z = 0; z < CornerBlocks.CornerWidth; z++) {
@@ -1067,5 +1067,5 @@ public class CornerBlocks {
 			}
 		}
 	}
-	
+
 }

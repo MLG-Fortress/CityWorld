@@ -1,4 +1,4 @@
-package me.daddychurchill.CityWorld.Support;
+package me.daddychurchill.CityWorld_00face.Support;
 
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -18,35 +18,35 @@ import org.bukkit.material.TexturedMaterial;
 import org.bukkit.Material.SPRUCE_WOOD;
 import org.bukkit.Material.WHITE_WOOL;
 
-import me.daddychurchill.CityWorld.Support.Odds.ColorSet;
-import me.daddychurchill.CityWorld.Support.Materials.Carpet;
-import me.daddychurchill.CityWorld.Support.Materials.Concrete;
-import me.daddychurchill.CityWorld.Support.Materials.Concrete_Powder;
-import me.daddychurchill.CityWorld.Support.Materials.Dirt;
-import me.daddychurchill.CityWorld.Support.Materials.Stone;
-import me.daddychurchill.CityWorld.Support.Materials.Dirt.DirtType;
-import me.daddychurchill.CityWorld.Support.Materials.Prismarine.PrismarineType;
-import me.daddychurchill.CityWorld.Support.Materials.Double_Slab;
-import me.daddychurchill.CityWorld.Support.Materials.Log;
-import me.daddychurchill.CityWorld.Support.Materials.Prismarine;
-import me.daddychurchill.CityWorld.Support.Materials.Red_Sandstone;
-import me.daddychurchill.CityWorld.Support.Materials.Sand;
-import me.daddychurchill.CityWorld.Support.Materials.Sand.SandType;
-import me.daddychurchill.CityWorld.Support.Materials.Slab;
-import me.daddychurchill.CityWorld.Support.Materials.Slab.SlabType;
-import me.daddychurchill.CityWorld.Support.Materials.SmoothBrick;
-import me.daddychurchill.CityWorld.Support.Materials.SmoothBrick.SmoothBrickType;
-import me.daddychurchill.CityWorld.Support.Materials.Sponge;
-import me.daddychurchill.CityWorld.Support.Materials.Sponge.SpongeType;
-import me.daddychurchill.CityWorld.Support.Materials.Stained_Clay;
-import me.daddychurchill.CityWorld.Support.Materials.Stained_Glass;
-import me.daddychurchill.CityWorld.Support.Materials.Stained_Glass_Pane;
-import me.daddychurchill.CityWorld.Support.Materials.Stone.StoneType;
-import me.daddychurchill.CityWorld.Support.Materials.Wood_Double_Slab;
-import me.daddychurchill.CityWorld.Support.Materials.Wood_Slab;
+import me.daddychurchill.CityWorld_00face.Support.Odds.ColorSet;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Carpet;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Concrete;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Concrete_Powder;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Dirt;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Stone;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Dirt.DirtType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Prismarine.PrismarineType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Double_Slab;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Log;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Prismarine;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Red_Sandstone;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Sand;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Sand.SandType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Slab;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Slab.SlabType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.SmoothBrick;
+import me.daddychurchill.CityWorld_00face.Support.Materials.SmoothBrick.SmoothBrickType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Sponge;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Sponge.SpongeType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Stained_Clay;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Stained_Glass;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Stained_Glass_Pane;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Stone.StoneType;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Wood_Double_Slab;
+import me.daddychurchill.CityWorld_00face.Support.Materials.Wood_Slab;
 
 public class RealMaterial {
-	
+
 	// List of materials
 	public final static MaterialData AIR = define(false, false, Material.AIR);
 
@@ -788,23 +788,23 @@ public class RealMaterial {
 	public final static MaterialData RECORD_10 = define(false, false, Material.RECORD_10);
 	public final static MaterialData RECORD_11 = define(false, false, Material.RECORD_11);
 	public final static MaterialData RECORD_12 = define(false, false, Material.RECORD_12);
-	
+
 //	private static Map<Integer, MaterialEntry> entries = new HashMap<Integer, MaterialEntry>();
-//	
+//
 //	private static class MaterialEntry {
 //		private final String ident;
 //		private final boolean stackable;
 //		private final MaterialData data;
-//		
+//
 //		private MaterialEntry(String ident, boolean stackable, MaterialData data) {
 //			this.ident = ident;
 //			this.stackable = stackable;
 //			this.data = data;
 //		}
-//		
+//
 //		// TODO figure out a more elegant way to do this
 //		private static int maxTypeId = 4096;
-//		
+//
 //		@SuppressWarnings("deprecation")
 //		private static int calcHash(MaterialData data) {
 //			return data.getItemTypeId() * maxTypeId + data.getData();
@@ -815,26 +815,26 @@ public class RealMaterial {
 //			return data.getId() * maxTypeId;
 //		}
 //	}
-	
+
 	// PUBLIC APIs
 	private final static MaterialData define(boolean buildable, boolean deprecated, Material material) {
 		return(define(buildable, deprecated, new MaterialData(material)));
 	}
-	
+
 	private final static MaterialData define(boolean buildable, boolean deprecated, MaterialData data) {
 //		MaterialEntry entry = new MaterialEntry(ident, buildable, data);
 //		entries.put(MaterialEntry.calcHash(data), entry);
 
 		//TODO: Figure out deprecate to non-deprecate mapping
-		
+
 		return(data);
 	}
-	
+
 	@Deprecated
 	public final static MaterialData asData(Material type) {
 		return new MaterialData(type);
 	}
-	
+
 //	public final static MaterialData find(String ident) {
 //		Set<Map.Entry<Integer, MaterialEntry>> entrySet = entries.entrySet();
 //		for (Entry<Integer, MaterialEntry> entry : entrySet) {
@@ -843,13 +843,13 @@ public class RealMaterial {
 //		}
 //		return null;
 //	}
-//	
+//
 //	public final static String find(MaterialData data) {
 //		MaterialEntry entry = entries.get(MaterialEntry.calcHash(data));
 //		assert(entry != null);
 //		return entry.ident;
 //	}
-	
+
 	public final static boolean isType(Block block, MaterialData ... materials) {
 		MaterialData blockData = block.getState().getData();
 		for (MaterialData material : materials)
@@ -857,80 +857,80 @@ public class RealMaterial {
 				return true;
 		return false;
 	}
-	
+
 	public final static boolean isSimilarType(MaterialData original, MaterialData test) {
 		if (original.getItemType() == test.getItemType())
 			return true;
 		//TODO this should also test for stairs, leave vs. leave2, etc.
 		return false;
 	}
-	
+
 	public final static Block setBlock(Block block, MaterialData material) {
 		return setBlock(block, material, true);
 	}
-	
+
 	public final static Block setBlock(Block block, MaterialData material, boolean update) {
 		BlockState state = block.getState();
 		assert(state != null);
-		
+
 		state.setType(material.getItemType());
 		state.setData(material);
 		state.update(update);
 		return block;
 	}
-	
+
 //	public final static boolean isStackable(MaterialData data) {
 //		MaterialEntry entry = entries.get(MaterialEntry.calcHash(data));
 //		assert(entry != null);
-//		
+//
 //		return entry.stackable;
 //	}
-//	
+//
 //	@Deprecated
 //	public final static boolean isStackable(Material data) {
 //		MaterialEntry entry = entries.get(MaterialEntry.calcHash(data));
 //		assert(entry != null);
-//		
+//
 //		return entry.stackable;
 //	}
-//	
+//
 //	public final static boolean isStackable(Block block) {
 //		MaterialEntry entry = entries.get(MaterialEntry.calcHash(block.getType()));
 //		assert(entry != null);
-//		
+//
 //		return entry.stackable;
 //	}
-	
+
 	public final static MaterialData adjust(MaterialData material, DyeColor color) {
 		MaterialData result = null;
 		result = material.clone();
 		assert(result != null);
-		
+
 		if (result instanceof Colorable) {
 			((Colorable)result).setColor(color);
-		} 
+		}
 		return result;
 	}
-	
+
 	public final static MaterialData adjust(MaterialData material, Material texture) {
 		MaterialData result = null;
 		result = material.clone();
 		assert(result != null);
-		
+
 		if (result instanceof TexturedMaterial) {
 			((TexturedMaterial)result).setMaterial(texture);
-		} 
+		}
 		return result;
 	}
-	
+
 	public final static MaterialData adjust(MaterialData material, BlockFace facing) {
 		MaterialData result = null;
 		result = material.clone();
 		assert(result != null);
-		
+
 		if (result instanceof Directional) {
 			((Directional)result).setFacingDirection(facing);
-		} 
+		}
 		return result;
 	}
 
@@ -938,28 +938,28 @@ public class RealMaterial {
 		Stairs result = null;
 		result = material.clone();
 		assert(result != null);
-		
+
 		result.setFacingDirection(face);
 		result.setInverted(invert);
 		return result;
 	}
-	
+
 	public final static MaterialData getRandomStainedGlass(Odds odds) {
 		return getRandomStainedGlass(odds, ColorSet.ALL);
 	}
-	
+
 	public final static MaterialData getRandomStainedGlass(Odds odds, ColorSet color) {
 		return adjust(RealMaterial.WHITE_GLASS, odds.getRandomColor(color));
 	}
-	
+
 	public final static MaterialData getRandomStainedGlassPane(Odds odds) {
 		return getRandomStainedGlassPane(odds, ColorSet.ALL);
 	}
-	
+
 	public final static MaterialData getRandomStainedGlassPane(Odds odds, ColorSet color) {
 		return adjust(RealMaterial.WHITE_GLASS_PANE, odds.getRandomColor(color));
 	}
-	
+
 	// validator the ensures that I have all the ones that is in this version of Minecraft
 	{
 		//TODO I need to create an initializer that verifies that we include everything that is in the Material list
