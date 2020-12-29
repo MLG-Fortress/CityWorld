@@ -8,6 +8,7 @@ import org.bukkit.util.noise.NoiseGenerator;
 import org.bukkit.util.noise.SimplexNoiseGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
 
+import me.daddychurchill.CityWorld_00face.CityWorld;
 import me.daddychurchill.CityWorld_00face.CityWorldGenerator;
 import me.daddychurchill.CityWorld_00face.Context.Astral.*;
 import me.daddychurchill.CityWorld_00face.Context.Astral.AstralForestContext.ForestStyle;
@@ -416,6 +417,7 @@ public class ShapeProvider_Astral extends ShapeProvider {
 									noiseFrequency, noiseAmplitude, true);
 							chunk.setBlocks(x, x + 1, baseY, y, z, z + 1, coloredGlass[Math.min(coloredGlass.length - 1,
 									Math.max(0, NoiseGenerator.floor(colorD) * coloredGlass.length))]);
+							CityWorld.log.info("colorD: " + colorD);
 
 							// sprinkle a little bit more snow?
 						} else {

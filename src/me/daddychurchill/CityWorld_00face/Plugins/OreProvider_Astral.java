@@ -11,9 +11,9 @@ public class OreProvider_Astral extends OreProvider_Normal {
 	public OreProvider_Astral(CityWorldGenerator generator) {
 		super(generator);
 
-		surfaceMaterial = Material.SNOW_BLOCK;
-		subsurfaceMaterial = Material.ICE;
-		stratumMaterial = Material.PACKED_ICE;
+		surfaceMaterial = Material.SOUL_SAND;
+		subsurfaceMaterial = Material.SOUL_SOIL;
+		stratumMaterial = Material.NETHERRACK;
 		substratumMaterial = Material.BEDROCK;
 
 		fluidMaterial = Material.LAVA;
