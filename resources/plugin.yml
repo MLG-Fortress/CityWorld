@@ -1,6 +1,6 @@
 name: CityWorld_00face
 main: me.daddychurchill.CityWorld_00face.CityWorld
-version: 5.0
+version: '5.0-${git.commit.id.abbrev}'
 api-version: 1.14
 load: STARTUP
 author: DaddyChurchill
