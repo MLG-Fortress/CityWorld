@@ -417,7 +417,7 @@ public class ShapeProvider_Astral extends ShapeProvider {
 									noiseFrequency, noiseAmplitude, true);
 //							chunk.setBlocks(x, x + 1, baseY, y, z, z + 1, coloredGlass[Math.min(coloredGlass.length - 1,
 //									Math.max(0, NoiseGenerator.floor(colorD) * coloredGlass.length))]); //Idk what the hecc this math is, but it's wrong lol
-							chunk.setBlocks(x, x + 1, baseY, z, z + 1, coloredGlass[(int)(Math.abs(colorD) * 100) % coloredGlass.length]);
+							chunk.setBlocks(x, x + 1, baseY, y, z, z + 1, coloredGlass[(int)(Math.abs(colorD) * 100) % coloredGlass.length]);
 
 							// sprinkle a little bit more snow?
 						} else {
