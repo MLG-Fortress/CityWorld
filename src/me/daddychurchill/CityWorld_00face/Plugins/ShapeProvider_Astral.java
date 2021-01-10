@@ -415,9 +415,9 @@ public class ShapeProvider_Astral extends ShapeProvider {
 							int segmentZ = z / blockYs.getSegmentWidth() * blockYs.getSegmentWidth() + originZ;
 							double colorD = noiseShape.noise(segmentX, segmentZ, blockYs.getSegment(x, z),
 									noiseFrequency, noiseAmplitude, true);
-							chunk.setBlocks(x, x + 1, baseY, y, z, z + 1, coloredGlass[Math.min(coloredGlass.length - 1,
-									Math.max(0, NoiseGenerator.floor(colorD) * coloredGlass.length))]);
-							CityWorld.log.info("colorD: " + colorD);
+//							chunk.setBlocks(x, x + 1, baseY, y, z, z + 1, coloredGlass[Math.min(coloredGlass.length - 1,
+//									Math.max(0, NoiseGenerator.floor(colorD) * coloredGlass.length))]); //Idk what the hecc this math is, but it's wrong lol
+							chunk.setBlocks(x, x + 1, baseY, z, z + 1, coloredGlass[(int)(Math.abs(colorD) * 100) % coloredGlass.length]);
 
 							// sprinkle a little bit more snow?
 						} else {
